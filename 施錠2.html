@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Door Lock Check</title>
+  </head>
+  <body>
+    <h1>建物のドアの施錠をチェックする</h1>
+    <form id="lock-form">
+      <p>施錠・消灯されているものにチェックを入れてください。</p>
+      
+      <label><input type="checkbox" name="checklist" value="1">ドア 1</label><br>
+      <label><input type="checkbox" name="checklist" value="2">ドア 2</label>　　<label><input type="checkbox" name="checklist" value="2">ドア2</label><br>
+      <label><input type="checkbox" name="checklist" value="3">ドア 3</label><br>
+      <label><input type="checkbox" name="checklist" value="4">ドア 4</label><br>
+      <label><input type="checkbox" name="checklist" value="5">ドア 5</label><br>
+      <label><input type="checkbox" name="checklist" value="6">ドア 6</label><br>
+      <label><input type="checkbox" name="checklist" value="7">ドア 7</label><br>
+      <label><input type="checkbox" name="checklist" value="8">ドア 8</label><br>
+      <label><input type="checkbox" name="checklist" value="9">ドア 9</label><br>
+      <label><input type="checkbox" name="checklist" value="10">ドア10</label><br>
+      <label><input type="checkbox" name="checklist" value="11">ドア11</label><br>
+      <label><input type="checkbox" name="checklist" value="12">ドア12</label><br>
+      <label><input type="checkbox" name="checklist" value="13">ドア13</label><br>
+      <label><input type="checkbox" name="checklist" value="14">ドア14</label><br>
+      <label><input type="checkbox" name="checklist" value="15">ドア15</label><br>
+      <label><input type="checkbox" name="checklist" value="16">ドア16</label><br>
+      <label><input type="checkbox" name="checklist" value="17">ドア17</label><br>
+      <label><input type="checkbox" name="checklist" value="18">ドア18</label><br>
+      <label><input type="checkbox" name="checklist" value="19">ドア19</label><br>
+      <label><input type="checkbox" name="checklist" value="20">ドア20</label><br>
+      <label><input type="checkbox" name="checklist" value="21">ドア21</label><br>
+ <button type="submit">送信</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+  const form = document.getElementById("lock-form");
+  const resultDiv = document.getElementById("result");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const checkedItems = document.querySelectorAll('input[name="checklist"]:checked');
+    const checkedValues = Array.from(checkedItems).map(item => item.value);
+    resultDiv.innerText = "選択された項目: " + checkedValues.join(", ");
+  });
+</script>
